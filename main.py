@@ -2,7 +2,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 tokenizer = AutoTokenizer.from_pretrained("Salesforce/codegen-350M-mono")
 model = AutoModelForCausalLM.from_pretrained("Salesforce/codegen-350M-mono")
 
-user_prompt = input("Введите описание задачи:\n")
+user_prompt = input("Введите описание задачи: \n")
 
 text = f"'''\nuser prompt:\n{user_prompt}\nWrite Python code IN ENGLISH below:\n'''\ndef"
 
