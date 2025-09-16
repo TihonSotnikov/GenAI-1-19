@@ -4,6 +4,12 @@ TOKENIZER = AutoTokenizer.from_pretrained("Salesforce/codegen-350M-mono")
 MODEL = AutoModelForCausalLM.from_pretrained("Salesforce/codegen-350M-mono")
 
 def generate_ans(user_prompt, tokenizer, model):
+    """
+    :param user_prompt: запрос по генерации кода от пользователя
+    :param tokenizer: Токенизатор для преобразования текста в токены.
+    :param model: Модель для генерации кода.
+    :return: Сгенерированный код в виде строки или None при ошибке.
+    """
     try:
         # модель, которую необходимо использовать, продолжает текст, а не выдает самостоятельный ответ (как например chatgpt)
         # поэтому пользовательский промпт заворачивается в питоновский комментарий, а далее напишется "def", чтобы модель восприняла это
