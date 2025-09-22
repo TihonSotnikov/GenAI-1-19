@@ -13,8 +13,12 @@ def test_code_syntax(generated_code):
     return 1
 
 def tests():
-    assert test_code_syntax(generate_ans("напиши функцию, которая выводит \"hello, world\"", tokenizer=TOKENIZER, model=MODEL))
-    assert test_code_syntax(generate_ans("напиши функцию, которая считает факториал", tokenizer=TOKENIZER, model=MODEL))
-    assert test_code_syntax(generate_ans("напиши функцию, которая проверяет число на простоту", tokenizer=TOKENIZER, model=MODEL))
+    print("\n\n---------------- Начало тестов... ----------------\n\n")
+
+    assert test_code_syntax(generate_ans("напиши функцию, которая выводит \"hello, world\""))
+    assert test_code_syntax(generate_ans("напиши функцию, которая считает факториал"))
+    assert test_code_syntax(generate_ans("напиши функцию, которая проверяет число на простоту"))
+
+    print("---------------- Все тесты пройдены успешно. ----------------")
 
 tests()
